@@ -1,0 +1,8 @@
+**Some variables (such as Total_income, Salary_wages, Earning, and possibly other income components) may directly determine income_after_tax which can lead the model suffer from data leakage, producing unrealistically high accuracy.**
+
+**How to identify and handle those variables appropriately before training and comparing:**
+
+- Data leakage occurs when your model has access to information during training that would not be available at prediction time or is directly derived from the target variable
+To prevent data leakage, variables representing direct components of after-tax income (e.g., Total_income, Salary_wages, Earning, Investment, Pension, and Self_emp_income)
+were excluded from the feature set. These variables are conceptually part of the target and would artificially inflate model performance. 
+The final models were trained using demographic, educational, employment, and household characteristics that would realistically be available before observing an individual's after-tax income.
